@@ -6,6 +6,7 @@
       %meta{:content => content_for?(:description) ? yield(:description) : t(:site_description), :name => "description"}
       = ajaxful_rating_style
       = stylesheet_link_tag "application", :media => "all"
+      = stylesheet_link_tag "kiosk/style", :media => "all"
       = stylesheet_link_tag brand, :media => "all"
       = stylesheet_link_tag "http://cdn.leafletjs.com/leaflet-0.4/leaflet.css", :media => "all"
       
@@ -13,12 +14,13 @@
       = javascript_include_tag "http://maps.google.com/maps/api/js?v=3.2&sensor=false"
       = javascript_include_tag "application" # TODO This should go in footer
       = javascript_include_tag "https://www.google.com/jsapi"
+      = javascript_include_tag "kiosk/trips/trips"
 
 
       = csrf_meta_tags
       = yield(:head)
   %body{:class => "#{controller_css_class} #{action_name}"}
-    / application.html.haml
+    / engine views/layouts/kiosk/kiosk.html.haml
     = render 'shared/navigation'
     .container-fluid
       #main{:role => "main"}
