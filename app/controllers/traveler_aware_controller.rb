@@ -1,3 +1,0 @@
-class TravelerAwareController < ApplicationController
-    
-end

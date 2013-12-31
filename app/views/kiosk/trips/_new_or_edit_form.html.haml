@@ -1,0 +1,59 @@
+%div.responsive-mbp.row-fluid
+  .span4.info
+    #left-description
+      %h1 
+        = t(:plan_a_trip)
+      %h4 Tell us About Your Trip
+      %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed, assumenda, minima, soluta rerum voluptatum at ullam consectetur consequatur molestiae veniam vel eius iure recusandae molestias delectus officiis excepturi. Amet, fugiat.
+    #left-results.hidden
+      %h1 Overview
+      %h4 Lorem Ipsum
+      %h5 From
+      %p.from n/a
+      %h5 Destination
+      %p.to n/a
+      %h5 Date
+      %p.date n/a
+      %h5 Departure Time
+      %p.time n/a
+      %h5 Return Time
+      %p.return n/a
+      %h5 Purpose
+      %p.reason n/a
+
+
+  %div.span8plus.inputs
+    .row-fluid
+      -if @trip_proxy.errors.any?
+        .row-fluid
+          .span12
+            %h4
+              %div{:class => "alert alert-error"}
+                %a.close{"data-dismiss" => "alert"} ×
+                %div= t(:correct_errors_to_create_a_trip)
+
+
+
+      .row-fluid    
+        #trip_form.span12
+          = render 'trip_form'
+          #trip_map
+            = render 'trip_map'  
+
+
+
+:javascript
+  // UI variables
+  var trip_map_key = "trip_map_key";
+
+  // Document Ready
+  $(document).ready(function(){
+    // open or close the map on load based on last state
+    var trip_map_open = get_ui_key_value(trip_map_key, 0);
+    $('#trip_map').hide();
+
+    
+  });
+ 
+
+   
