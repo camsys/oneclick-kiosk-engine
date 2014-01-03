@@ -29,6 +29,28 @@ Kiosk::Engine.routes.draw do
         get   'show_printer_friendly'
       end
     end
+    resources :characteristics, :only => [:new, :create, :edit, :update] do
+      collection do
+        get 'header'
+      end
+      member do
+        put 'set'
+      end
+    end
+
+    resources :programs, :only => [:new, :create, :edit, :update] do
+      member do
+        put 'set'
+      end
+    end
+
+    resources :accommodations, :only => [:new, :create, :edit, :update] do
+      member do
+        put 'set'
+      end
+    end
+    
+
   end
 
 end

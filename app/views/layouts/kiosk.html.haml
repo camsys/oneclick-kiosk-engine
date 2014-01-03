@@ -14,6 +14,7 @@
       = javascript_include_tag "http://maps.google.com/maps/api/js?v=3.2&sensor=false"
       = javascript_include_tag "application" # TODO This should go in footer
       = javascript_include_tag "https://www.google.com/jsapi"
+      = javascript_include_tag "kiosk/leafletmap"
       = javascript_include_tag "kiosk/trips/trips"
 
 
@@ -21,7 +22,7 @@
       = yield(:head)
   %body{:class => "#{controller_css_class} #{action_name}"}
     / engine views/layouts/kiosk/kiosk.html.haml
-    = render 'shared/navigation'
+    = render 'kiosk/shared/navigation'
     .container-fluid
       #main{:role => "main"}
         .container-fluid
