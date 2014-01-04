@@ -1,5 +1,7 @@
 Kiosk::Engine.routes.draw do
 
+  devise_for :users, controllers: {registrations: "kiosk/registrations"}
+
   resources :users do
     resources :trips, :only => [:show, :index, :new, :create, :destroy, :edit, :update] do
       collection do

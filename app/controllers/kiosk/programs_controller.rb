@@ -1,6 +1,8 @@
 module Kiosk
   class ProgramsController < ::ProgramsController
 
+    layout 'kiosk'
+    
     before_filter :get_traveler
 
     def update

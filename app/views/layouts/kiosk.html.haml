@@ -6,6 +6,7 @@
       %meta{:content => content_for?(:description) ? yield(:description) : t(:site_description), :name => "description"}
       = ajaxful_rating_style
       = stylesheet_link_tag "application", :media => "all"
+      = stylesheet_link_tag "kiosk/application", :media => "all"
       = stylesheet_link_tag "kiosk/style", :media => "all"
       = stylesheet_link_tag brand, :media => "all"
       = stylesheet_link_tag "http://cdn.leafletjs.com/leaflet-0.4/leaflet.css", :media => "all"
